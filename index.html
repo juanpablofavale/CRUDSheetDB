@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Prueba de CRUD con SheetDB</title>
+</head>
+<body>
+
+    <div id="app">
+        <h1>CRUD Google Sheet con SheetDB</h1>
+        <table border="1">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Direccion</th>
+                    <th>Telefono</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr v-for="dato of datos">
+                    <td>{{dato.ID}}</td>
+                    <td>{{dato.Nombre}}</td>
+                    <td>{{dato.Direccion}}</td>
+                    <td>{{dato.Telefono}}</td>
+                    <td><button @click="borrarRegistro(dato.ID)">Borrar</button></td>
+                    <td><button @click="modificarBtn(dato)">Modificar</button></td>
+                </tr>
+        </table>
+        <br><br>
+        <form action="" onsubmit="return false">
+            <label>ID:{{idAEditar}}</label><br><br>
+            <label for="nombre">Nombre: </label>
+            <input type="text" id="nombre" name="Nombre" v-model="nom" required><br>
+            <label for="direccion">Direccion: </label>
+            <input type="text" id="direccion" name="Direccion" v-model="dir" required><br>
+            <label for="telefono">Telefono: </label>
+            <input type="text" id="telefono" name="Telefono" v-model="tel" required><br>
+            <input @click="guardarPersona()" type="submit" value="Guardar">
+            <button @click="modificarRegistro()" id="Modificar">Actualizar</button>
+        </form>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

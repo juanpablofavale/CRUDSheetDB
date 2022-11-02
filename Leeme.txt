@@ -1,0 +1,14 @@
+url planilla:
+https://docs.google.com/spreadsheets/d/1YEgT86E2xjRgiyV9YB1tq1m4FDlicZt30qH9nLLS93w/edit#gid=0
+
+api key:
+AIzaSyAwqGktBBGRDMbcpwFdR-wDL2f-S7VH-W4
+
+id hoja de calculo:
+1YEgT86E2xjRgiyV9YB1tq1m4FDlicZt30qH9nLLS93w
+
+rango:
+a1:c4
+
+urlbase:
+https://docs.google.com/spreadsheets/d/
