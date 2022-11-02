@@ -38,8 +38,8 @@
             <input type="text" id="direccion" name="Direccion" v-model="dir" required><br>
             <label for="telefono">Telefono: </label>
             <input type="text" id="telefono" name="Telefono" v-model="tel" required><br>
-            <input @click="guardarPersona()" type="submit" value="Guardar">
-            <button v-if="idAEditar!='Automatico'" @click="modificarRegistro()" id="Modificar">Actualizar</button>
+            <input v-if="idAEditar=='Automatico'" @click="guardarPersona()" type="submit" value="Guardar">
+            <button v-else-if="idAEditar!='Automatico'" @click="modificarRegistro()" id="Modificar">Actualizar</button>
         </form>
     </div>
 
