@@ -39,7 +39,7 @@
             <label for="telefono">Telefono: </label>
             <input type="text" id="telefono" name="Telefono" v-model="tel" required><br>
             <input @click="guardarPersona()" type="submit" value="Guardar">
-            <button @click="modificarRegistro()" id="Modificar">Actualizar</button>
+            <button v-if="idAEditar!='Automatico'" @click="modificarRegistro()" id="Modificar">Actualizar</button>
         </form>
     </div>
 
