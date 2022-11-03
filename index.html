@@ -21,10 +21,10 @@
                     <th></th>
                 </tr>
                 <tr v-for="dato of datos">
-                    <td>{{dato.ID}}</td>
-                    <td>{{dato.Nombre}}</td>
-                    <td>{{dato.Direccion}}</td>
-                    <td>{{dato.Telefono}}</td>
+                    <td>{{dato[0]}}</td>
+                    <td>{{dato[1]}}</td>
+                    <td>{{dato[2]}}</td>
+                    <td>{{dato[3]}}</td>
                     <td><button @click="borrarRegistro(dato.ID)">Borrar</button></td>
                     <td><button @click="modificarBtn(dato)">Modificar</button></td>
                 </tr>

@@ -7,10 +7,7 @@ createApp({
     return {
       datos: [],
       urlSheetDB: "https://sheetdb.io/api/v1/mxsc73jlnpu08",
-      urlBase: "https://content-sheets.googleapis.com/v4/spreadsheets/",
-      idHoja: "1YEgT86E2xjRgiyV9YB1tq1m4FDlicZt30qH9nLLS93w",
-      rango: "/values/a2:c15",
-      apiKey: "?access_token=" + "AIzaSyAwqGktBBGRDMbcpwFdR-wDL2f-S7VH-W4" + "&key=" + "AIzaSyAwqGktBBGRDMbcpwFdR-wDL2f-S7VH-W4",
+      urlLectura: "https://sheets.googleapis.com/v4/spreadsheets/1YEgT86E2xjRgiyV9YB1tq1m4FDlicZt30qH9nLLS93w/values/Hoja%201/?key=AIzaSyAwqGktBBGRDMbcpwFdR-wDL2f-S7VH-W4",
       url: "",
       nom: "",
       dir: "",
@@ -89,7 +86,7 @@ createApp({
         .catch(error => console.log('error', error));
     },
     leerYLimpiar(){
-      this.leerDatos(this.urlSheetDB)
+      this.leerDatos(this.urlLectura)
       this.nom = ""
       this.dir = ""
       this.tel = ""
@@ -99,7 +96,8 @@ createApp({
       fetch(url)
         .then(res => res.json())
         .then(data => {
-          this.datos = data
+          this.datos = data.values
+          this.datos.shift()
         })
     }
   },
