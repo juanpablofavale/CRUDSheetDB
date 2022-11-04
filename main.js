@@ -17,11 +17,11 @@ createApp({
   },
   methods: {
     modificarBtn(registro){
-      this.nom = registro.Nombre
-      this.dir = registro.Direccion
-      this.tel = registro.Telefono
-      this.id = registro.ID
-      this.idAEditar= registro.ID
+      this.nom = registro[1]
+      this.dir = registro[2]
+      this.tel = registro[3]
+      this.id = registro[0]
+      this.idAEditar= registro[0]
     },
     modificarRegistro() {
       var myHeaders = new Headers();
@@ -60,7 +60,7 @@ createApp({
         .then(response => response.text())
         .then(result => {
           console.log(result)
-          this.leerDatos(this.urlSheetDB)
+          this.leerYLimpiar()
         })
         .catch(error => console.log('error', error));
     },
